@@ -21,7 +21,7 @@ You need an API-Key on meteonomiqs.com. Register at https://www.meteonomiqs.com/
 
 ## Icons
 
-Access icons like http://ip:8082/adapter/wetter_com/icons/d_0.svg.
+Access icons like `http://ip:8082/adapter/wetter_com/icons/d_0.svg`.
 
 ## Changelog
 
