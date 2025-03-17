@@ -1,0 +1,90 @@
+{
+	"common": {
+		"name": "wetter_com",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"uk": "Початкова версія",
+				"zh-cn": "首次出版"
+			}
+		},
+		"titleLang": {
+			"en": "wetter.com",
+			"de": "fauster.com",
+			"ru": "Wetter.com",
+			"pt": "Wetter.com",
+			"nl": "natter.com",
+			"fr": "wetter.com",
+			"it": "wetter.com",
+			"es": "wetter.com",
+			"pl": "wetter.com",
+			"uk": "WOOT MOTER.com",
+			"zh-cn": "wetter.com"
+		},
+		"desc": {
+			"en": "Reads weather forecast data from wetter.com api",
+			"de": "Liest Wettervorhersagedaten von fauter.com API",
+			"ru": "Читает данные прогноза погоды от API Wetter.com",
+			"pt": "Lê dados de previsão do tempo da API Wetter.com",
+			"nl": "Leest weersvoorspellingsgegevens van Wetter.com API",
+			"fr": "Lit des données sur les prévisions météorologiques de l'API Wetter.com",
+			"it": "Legge i dati di previsione meteorologica dall'API Wetter.com",
+			"es": "Lee datos de pronóstico del tiempo de la API de Wetter.com",
+			"pl": "Odczytuje dane prognozy pogody z API Wetter.com",
+			"uk": "Читає дані прогнозування погоди з API Wetter.com",
+			"zh-cn": "从wetter.com读取天气预报数据API"
+		},
+		"authors": ["eifel-tech <hikaso@gmx.net>"],
+		"keywords": ["weather", "forecast", "wetter.com", "meteonomiqs"],
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
+		"platform": "Javascript/Node.js",
+		"icon": "wetter_com.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/eifel-tech/ioBroker.wetter_com/main/admin/wetter_com.png",
+		"readme": "https://github.com/eifel-tech/ioBroker.wetter_com/blob/main/README.md",
+		"loglevel": "info",
+		"tier": 3,
+		"mode": "schedule",
+		"schedule": "30 1,13 * * *",
+		"type": "weather",
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "poll",
+		"adminUI": {
+			"config": "json"
+		},
+		"supportCustoms": true,
+		"dependencies": [
+			{
+				"js-controller": ">=6.0.11"
+			}
+		],
+		"globalDependencies": [
+			{
+				"admin": "7.4.10"
+			}
+		]
+	},
+	"encryptedNative": ["key"],
+	"protectedNative": ["key"],
+	"native": {
+		"key": "",
+		"useSystemLocation": false,
+		"latitude": 0,
+		"longitude": 0
+	},
+	"objects": [],
+	"instanceObjects": []
+}
