@@ -6,9 +6,7 @@
 *.code-workspace
 node_modules
 nbproject
-debug
 test.js
-possibleErrorCodes.txt
 
 # npm package files
 iobroker.*.tgz
