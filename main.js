@@ -133,6 +133,7 @@ class WetterCom extends utils.Adapter {
 		try {
 			callback();
 		} catch (e) {
+			this.log.debug("Exception while unload: " + e);
 			callback();
 		}
 	}
