@@ -23,6 +23,8 @@ class WetterCom extends utils.Adapter {
 
 		this.pre_url = "https://forecast.meteonomiqs.com/v3_1/forecast/";
 		this.post_url = "/hourly";
+
+		this.summaryMap = new Map();
 	}
 
 	/**
@@ -84,7 +86,6 @@ class WetterCom extends utils.Adapter {
 				}
 
 				const dayChannelName = "Day_" + this.pad(dayCounter, 2);
-				const channelName = dayChannelName + ".Hour_" + this.pad(curDate.getHours(), 2);
 				await this.setObjectNotExistsAsync(dayChannelName, {
 					type: "channel",
 					common: {
@@ -93,6 +94,7 @@ class WetterCom extends utils.Adapter {
 					native: {},
 				});
 
+				const channelName = dayChannelName + ".Hour_" + this.pad(curDate.getHours(), 2);
 				await this.setObjectNotExistsAsync(channelName, {
 					type: "channel",
 					common: {
@@ -101,13 +103,17 @@ class WetterCom extends utils.Adapter {
 					native: {},
 				});
 
-				this.createDpWithState(channelName, item);
+				await this.createDpWithState(channelName, item);
+
+				//Tageszusammenfassungen
+				this.calculateSummary(dayChannelName, item);
 			}
+			await this.createSummaryDP();
 		}
 	}
 
 	async createDpWithState(channelName, item) {
-		const keys = Object.keys(item).filter((key) => key !== "date");
+		const keys = Object.keys(item);
 		for (const key of keys) {
 			if (typeof item[key] === "object" && item[key] !== null) {
 				const newChannelName = (channelName + "." + key).replace(this.FORBIDDEN_CHARS, "_");
@@ -119,6 +125,7 @@ class WetterCom extends utils.Adapter {
 					native: {},
 				});
 
+				//Windicons hinzufügen
 				if (key === "wind") {
 					const windName = channelName + "." + key + ".icon";
 					await this.setObjectNotExistsAsync(windName, {
@@ -137,7 +144,6 @@ class WetterCom extends utils.Adapter {
 						"/adapter/" + this.name + "/icons/wind/" + this.getWindIconName(item.wind.avg, item.wind.text),
 						true,
 					);
-					console.log("");
 				}
 
 				this.createDpWithState(newChannelName, item[key]);
@@ -162,6 +168,126 @@ class WetterCom extends utils.Adapter {
 				this.setState(channelName + "." + key, value, true);
 			}
 		}
+	}
+
+	async createSummaryDP() {
+		for (const pair of this.summaryMap) {
+			const [key, value] = pair;
+			//date
+			await this.setObjectNotExistsAsync(key + ".date", {
+				type: "state",
+				common: {
+					name: "date",
+					type: "string",
+					role: "indicator",
+					write: false,
+					read: true,
+				},
+				native: {},
+			});
+			this.setState(key + ".date", value.date.toLocaleDateString(), true);
+
+			//Name des Tages
+			await this.setObjectNotExistsAsync(key + ".day", {
+				type: "state",
+				common: {
+					name: "day name",
+					type: "string",
+					role: "indicator",
+					write: false,
+					read: true,
+				},
+				native: {},
+			});
+			this.setState(key + ".day", value.date.toLocaleDateString("de-DE", { weekday: "long" }), true);
+
+			//Temp min
+			await this.createNumberObjectNotExists(key, "tempMin", 100, "°C");
+			this.setState(key + ".tempMin", value.tempMin, true);
+
+			//Temp max
+			await this.createNumberObjectNotExists(key, "tempMax", -100, "°C");
+			this.setState(key + ".tempMax", value.tempMax, true);
+
+			//Humidity
+			await this.createNumberObjectNotExists(key, "humidity", 0, "%");
+			this.setState(key + ".humidity", this.avg(value.humidityHours), true);
+
+			//Luftdruck
+			await this.createNumberObjectNotExists(key, "pressure", 0, "mb");
+			this.setState(key + ".pressure", this.avg(value.pressureHours), true);
+
+			//Regenmenge
+			await this.createNumberObjectNotExists(key, "rain", 0, "mm");
+			this.setState(key + ".rain", this.avg(value.rainHours), true);
+
+			//Regenwahrscheinlichkeit
+			await this.createNumberObjectNotExists(key, "rainProbability", 0, "%");
+			this.setState(key + ".rainProbability", this.avg(value.rainProbHours), true);
+
+			//max Windböen
+			await this.createNumberObjectNotExists(key, "maxWindGusts", -1, "km/h");
+			this.setState(key + ".maxWindGusts", value.windGusts, true);
+
+			//Wind
+			await this.createNumberObjectNotExists(key, "windSpeed", -1, "km/h");
+			this.setState(key + ".windSpeed", this.avg(value.windSpeedHours), true);
+		}
+	}
+
+	/**
+	 * Tageszusammenfassungen
+	 * @param {*} dayChannelName
+	 * @param {*} item
+	 */
+	calculateSummary(dayChannelName, item) {
+		if (!this.summaryMap.has(dayChannelName)) {
+			this.summaryMap.set(dayChannelName, {
+				date: new Date(item.date),
+				tempMin: 100,
+				tempMax: -100,
+				windGusts: -1,
+				humidityHours: [],
+				pressureHours: [],
+				rainHours: [],
+				rainProbHours: [],
+				windSpeedHours: [],
+			});
+		}
+		const entry = this.summaryMap.get(dayChannelName);
+
+		//Temp min
+		entry.tempMin = Math.min(entry.tempMin, item.temperature.avg);
+		//Temp max
+		entry.tempMax = Math.max(entry.tempMax, item.temperature.avg);
+		//Humidity
+		entry.humidityHours.push(item.relativeHumidity);
+		//Pressure
+		entry.pressureHours.push(item.pressure);
+		//Regenmenge
+		entry.rainHours.push(item.prec.sum);
+		//Regenwahrscheinlichkeit
+		entry.rainProbHours.push(item.prec.probability);
+		//max Windböen
+		entry.windGusts = Math.max(entry.windGusts, item.wind.gusts.value);
+		//Windgeschwindigkeit
+		entry.windSpeedHours.push(item.wind.avg);
+	}
+
+	async createNumberObjectNotExists(id, name, def, unit) {
+		await this.setObjectNotExistsAsync(id + "." + name, {
+			type: "state",
+			common: {
+				name: name,
+				type: "number",
+				role: "indicator",
+				write: false,
+				read: true,
+				def: def,
+				unit: unit,
+			},
+			native: {},
+		});
 	}
 
 	getWindIconName(kmh, direction) {
@@ -203,6 +329,11 @@ class WetterCom extends utils.Adapter {
 			num = "0" + num;
 		}
 		return num;
+	}
+
+	avg(numArr) {
+		const sum = numArr.reduce((a, b) => a + b, 0);
+		return Math.round(sum / numArr.length);
 	}
 
 	/**
