@@ -72,14 +72,31 @@ class WetterCom extends utils.Adapter {
 			await this.delObjectAsync("", { recursive: true });
 
 			//Create Datapoints
+			let date = "";
+			let dayCounter = 0;
 			for (let i = 0; i < response.items.length; i++) {
 				const item = response.items[i];
+				const curDate = new Date(item.date);
 
-				const channelName = item.date.replace(this.FORBIDDEN_CHARS, "_");
+				if (date !== curDate.toLocaleDateString()) {
+					dayCounter++;
+					date = curDate.toLocaleDateString();
+				}
+
+				const dayChannelName = "Day_" + this.pad(dayCounter, 2);
+				const channelName = dayChannelName + ".Hour_" + this.pad(curDate.getHours(), 2);
+				await this.setObjectNotExistsAsync(dayChannelName, {
+					type: "channel",
+					common: {
+						name: date,
+					},
+					native: {},
+				});
+
 				await this.setObjectNotExistsAsync(channelName, {
 					type: "channel",
 					common: {
-						name: item.date,
+						name: curDate.toLocaleTimeString(),
 					},
 					native: {},
 				});
@@ -102,6 +119,27 @@ class WetterCom extends utils.Adapter {
 					native: {},
 				});
 
+				if (key === "wind") {
+					const windName = channelName + "." + key + ".icon";
+					await this.setObjectNotExistsAsync(windName, {
+						type: "state",
+						common: {
+							name: "icon",
+							type: "string",
+							role: "indicator",
+							write: false,
+							read: true,
+						},
+						native: {},
+					});
+					this.setState(
+						windName,
+						"/adapter/" + this.name + "/icons/wind/" + this.getWindIconName(item.wind.avg, item.wind.text),
+						true,
+					);
+					console.log("");
+				}
+
 				this.createDpWithState(newChannelName, item[key]);
 			} else {
 				let value = item[key];
@@ -118,11 +156,53 @@ class WetterCom extends utils.Adapter {
 					native: {},
 				});
 				if (key === "icon") {
-					value = "/adapter/" + this.name + "/icons/svg/" + value;
+					value = "/adapter/" + this.name + "/icons/weather/svg/" + value;
 				}
+
 				this.setState(channelName + "." + key, value, true);
 			}
 		}
+	}
+
+	getWindIconName(kmh, direction) {
+		switch (true) {
+			case kmh === 0:
+				return "0_" + direction + ".png";
+			case kmh >= 1 && kmh <= 5:
+				return "1_" + direction + ".png";
+			case kmh >= 6 && kmh <= 11:
+				return "2_" + direction + ".png";
+			case kmh >= 12 && kmh <= 19:
+				return "3_" + direction + ".png";
+			case kmh >= 20 && kmh <= 28:
+				return "4_" + direction + ".png";
+			case kmh >= 29 && kmh <= 38:
+				return "5_" + direction + ".png";
+			case kmh >= 39 && kmh <= 49:
+				return "6_" + direction + ".png";
+			case kmh >= 50 && kmh <= 61:
+				return "7_" + direction + ".png";
+			case kmh >= 62 && kmh <= 74:
+				return "8_" + direction + ".png";
+			case kmh >= 75 && kmh <= 88:
+				return "9_" + direction + ".png";
+			case kmh >= 89 && kmh <= 102:
+				return "10_" + direction + ".png";
+			case kmh >= 103 && kmh <= 117:
+				return "11_" + direction + ".png";
+			case kmh >= 118:
+				return "12_" + direction + ".png";
+			default:
+				break;
+		}
+	}
+
+	pad(num, size) {
+		num = num.toString();
+		while (num.length < size) {
+			num = "0" + num;
+		}
+		return num;
 	}
 
 	/**
