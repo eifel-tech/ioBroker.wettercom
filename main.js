@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 "use strict";
 
 /*
@@ -17,8 +18,6 @@ class WetterCom extends utils.Adapter {
 			name: "wetter_com",
 		});
 		this.on("ready", this.onReady.bind(this));
-		this.on("stateChange", this.onStateChange.bind(this));
-
 		this.on("unload", this.onUnload.bind(this));
 
 		this.pre_url = "https://forecast.meteonomiqs.com/v3_1/forecast/";
@@ -66,12 +65,29 @@ class WetterCom extends utils.Adapter {
 				return res.data;
 			})
 			.catch((error) => {
-				this.log.error(JSON.stringify(error.response.data));
+				this.log.error(
+					"Failed to get data. Check your API-key first. Server responsed with " +
+						error.response.status +
+						": " +
+						error.response.statusText,
+				);
 			});
+
+		//Bei Fehlern, beenden
+		if (!response) {
+			this.terminate
+				? this.terminate(
+						"No data to parse so terminating adapter.",
+						utils.EXIT_CODES.ADAPTER_REQUESTED_TERMINATION,
+					)
+				: process.exit(utils.EXIT_CODES.ADAPTER_REQUESTED_TERMINATION);
+			return;
+		}
 
 		if (response.items) {
 			//Remove old Datapoints
 			await this.delObjectAsync("", { recursive: true });
+			this.log.debug("Removing old structure... done");
 
 			//Create Datapoints
 			let date = "";
@@ -108,8 +124,15 @@ class WetterCom extends utils.Adapter {
 				//Tageszusammenfassungen
 				this.calculateSummary(dayChannelName, item);
 			}
+			this.log.debug("Creating new structure... done");
+
 			await this.createSummaryDP();
+			this.log.debug("Creating summary... done");
 		}
+
+		this.terminate
+			? this.terminate("Exit, all done", utils.EXIT_CODES.NO_ERROR)
+			: process.exit(utils.EXIT_CODES.NO_ERROR);
 	}
 
 	async createDpWithState(channelName, item) {
@@ -174,7 +197,7 @@ class WetterCom extends utils.Adapter {
 		for (const pair of this.summaryMap) {
 			const [key, value] = pair;
 			//date
-			await this.setObjectNotExistsAsync(key + ".date", {
+			await this.setObjectNotExistsAsync(key.replace(this.FORBIDDEN_CHARS, "_") + ".date", {
 				type: "state",
 				common: {
 					name: "date",
@@ -188,7 +211,7 @@ class WetterCom extends utils.Adapter {
 			this.setState(key + ".date", value.date.toLocaleDateString(), true);
 
 			//Name des Tages
-			await this.setObjectNotExistsAsync(key + ".day", {
+			await this.setObjectNotExistsAsync(key.replace(this.FORBIDDEN_CHARS, "_") + ".day", {
 				type: "state",
 				common: {
 					name: "day name",
@@ -275,7 +298,7 @@ class WetterCom extends utils.Adapter {
 	}
 
 	async createNumberObjectNotExists(id, name, def, unit) {
-		await this.setObjectNotExistsAsync(id + "." + name, {
+		await this.setObjectNotExistsAsync((id + "." + name).replace(this.FORBIDDEN_CHARS, "_"), {
 			type: "state",
 			common: {
 				name: name,
@@ -346,21 +369,6 @@ class WetterCom extends utils.Adapter {
 		} catch (e) {
 			this.log.debug("Exception while unload: " + e);
 			callback();
-		}
-	}
-
-	/**
-	 * Is called if a subscribed state changes
-	 * @param {string} id
-	 * @param {ioBroker.State | null | undefined} state
-	 */
-	onStateChange(id, state) {
-		if (state) {
-			// The state was changed
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-		} else {
-			// The state was deleted
-			this.log.info(`state ${id} deleted`);
 		}
 	}
 }

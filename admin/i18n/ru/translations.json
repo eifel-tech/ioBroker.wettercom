@@ -1,5 +1,7 @@
 {
-	"wetter_com adapter settings": "Настройки адаптера для wetter_com",
-	"option1": "вариант1",
-	"option2": "вариант2"
+	"API_key": "Ключ API",
+	"API_key_help": "Введите ключ API, который вы получили",
+	"systemlocation": "Принять местоположение из системных настроек",
+	"latitude": "Широта",
+	"longitude": "Долгота"
 }

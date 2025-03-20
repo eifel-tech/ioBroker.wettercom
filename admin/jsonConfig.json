@@ -20,7 +20,7 @@
 			"lg": 4,
 			"xl": 4,
 			"type": "checkbox",
-			"label": "Ort aus Systemeinstellungen übernehmen",
+			"label": "systemlocation",
 			"newLine": true
 		},
 		"latitude": {
@@ -32,7 +32,8 @@
 			"type": "number",
 			"min": 0,
 			"disabled": "data.useSystemLocation",
-			"label": "Breitengrad"
+			"label": "latitude",
+			"help": "latitude"
 		},
 		"longitude": {
 			"xs": 12,
@@ -43,7 +44,8 @@
 			"type": "number",
 			"min": 0,
 			"disabled": "data.useSystemLocation",
-			"label": "Längengrad"
+			"label": "longitude",
+			"help": "longitude"
 		}
 	}
 }

@@ -1,5 +1,7 @@
 {
-	"wetter_com adapter settings": "Adapter settings for wetter_com",
-	"option1": "option1",
-	"option2": "option2"
+	"API_key": "API Key",
+	"API_key_help": "Enter the API key you received",
+	"systemlocation": "Adopt location from system settings",
+	"latitude": "Latitude",
+	"longitude": "Longitude"
 }

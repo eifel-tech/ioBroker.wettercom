@@ -1,5 +1,7 @@
 {
-	"wetter_com adapter settings": "wetter_com的适配器设置",
-	"option1": "选项1",
-	"option2": "选项2"
+	"API_key": "API 密钥",
+	"API_key_help": "输入您收到的 API 密钥",
+	"systemlocation": "从系统设置中选择位置",
+	"latitude": "纬度",
+	"longitude": "经度"
 }

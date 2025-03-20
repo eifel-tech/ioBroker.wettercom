@@ -1,5 +1,7 @@
 {
-	"wetter_com adapter settings": "Adapterinstellingen voor wetter_com",
-	"option1": "Option1",
-	"option2": "Optie2"
+	"API_key": "API-sleutel",
+	"API_key_help": "Voer de API-sleutel in die u hebt ontvangen",
+	"systemlocation": "Locatie goedkeuren vanaf systeeminstellingen",
+	"latitude": "Breedtegraad",
+	"longitude": "Lengtegraad"
 }

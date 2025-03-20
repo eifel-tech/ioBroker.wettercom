@@ -19,7 +19,7 @@
 		},
 		"titleLang": {
 			"en": "wetter.com",
-			"de": "fauster.com",
+			"de": "wetter.com",
 			"ru": "Wetter.com",
 			"pt": "Wetter.com",
 			"nl": "natter.com",
@@ -32,7 +32,7 @@
 		},
 		"desc": {
 			"en": "Reads weather forecast data from wetter.com api",
-			"de": "Liest Wettervorhersagedaten von fauter.com API",
+			"de": "Liest Wettervorhersagedaten von wetter.com API",
 			"ru": "Читает данные прогноза погоды от API Wetter.com",
 			"pt": "Lê dados de previsão do tempo da API Wetter.com",
 			"nl": "Leest weersvoorspellingsgegevens van Wetter.com API",

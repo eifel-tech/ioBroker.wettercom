@@ -1,5 +1,7 @@
 {
-	"wetter_com adapter settings": "Impostazioni dell'adattatore per wetter_com",
-	"option1": "opzione1",
-	"option2": "opzione2"
+	"API_key": "Chiave API",
+	"API_key_help": "Inserisci la chiave API che hai ricevuto",
+	"systemlocation": "Adottare la posizione dalle impostazioni di sistema",
+	"latitude": "Latitudine",
+	"longitude": "Longitudine"
 }
