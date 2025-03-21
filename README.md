@@ -11,7 +11,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/eifel-tech/iobroker.wettercom?logo=github&style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/eifel-tech/iobroker.wettercom?logo=github&style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/eifel-tech/iobroker.wettercom?logo=github&style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/eifel-tech/iobroker.wettercom/test-and-release.yml?branch=master&logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/eifel-tech/iobroker.wettercom/test-and-release.yml?branch=main&logo=github&style=flat-square)
 
 Reads weather forecast data from [wetter.com API](https://www.wetter.com/).
 
