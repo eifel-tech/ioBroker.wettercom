@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.0.3",
+		"version": "0.0.4",
 		"news": {
+			"0.0.4": {
+				"en": "Renaming",
+				"de": "Umbenennung",
+				"ru": "Переименование",
+				"pt": "Renaming",
+				"nl": "Hernoemen",
+				"fr": "Renaming",
+				"it": "Rinominazione",
+				"es": "Renaming",
+				"pl": "Zmiana nazwy",
+				"uk": "Перейменування",
+				"zh-cn": "重命名"
+			},
 			"0.0.3": {
 				"en": "Dependency updates",
 				"de": "Dependency updates",
