@@ -60,6 +60,8 @@
 		"schedule": "30 1,13 * * *",
 		"type": "weather",
 		"compact": true,
+		"allowInit": true,
+		"stopBeforeUpdate": true,
 		"connectionType": "cloud",
 		"dataSource": "poll",
 		"adminUI": {
