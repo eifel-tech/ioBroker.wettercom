@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.0.4",
+		"version": "0.0.5",
 		"news": {
+			"0.0.5": {
+				"en": "Changes from adapter checker",
+				"de": "Änderungen am Adapter-Checker",
+				"ru": "Изменения в Adapter Checker",
+				"pt": "Alterações do verificador do adaptador",
+				"nl": "Wijzigingen van de adaptercontrole",
+				"fr": "Modifications de l'adaptateur checker",
+				"it": "Modifiche dall'adattatore checker",
+				"es": "Cambios desde el control de adaptador",
+				"pl": "Zmiany z sprawdzania adaptera",
+				"uk": "Зміни з адаптера",
+				"zh-cn": "适配器检查器的更改"
+			},
 			"0.0.4": {
 				"en": "Renaming",
 				"de": "Umbenennung",
