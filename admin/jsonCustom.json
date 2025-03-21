@@ -1,0 +1,51 @@
+{
+	"i18n": true,
+	"type": "panel",
+	"items": {
+		"key": {
+			"xs": 12,
+			"sm": 12,
+			"md": 6,
+			"lg": 4,
+			"xl": 4,
+			"type": "text",
+			"label": "API_key",
+			"help": "API_key_help",
+			"newLine": true
+		},
+		"useSystemLocation": {
+			"xs": 12,
+			"sm": 12,
+			"md": 6,
+			"lg": 4,
+			"xl": 4,
+			"type": "checkbox",
+			"label": "systemlocation",
+			"newLine": true
+		},
+		"latitude": {
+			"xs": 12,
+			"sm": 12,
+			"md": 6,
+			"lg": 4,
+			"xl": 4,
+			"type": "number",
+			"min": 0,
+			"disabled": "data.useSystemLocation",
+			"label": "latitude",
+			"help": "latitude"
+		},
+		"longitude": {
+			"xs": 12,
+			"sm": 12,
+			"md": 6,
+			"lg": 4,
+			"xl": 4,
+			"type": "number",
+			"min": 0,
+			"disabled": "data.useSystemLocation",
+			"label": "longitude",
+			"help": "longitude"
+		}
+	}
+}
