@@ -29,17 +29,14 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Changes from adapter checker
+
 ### 0.0.4 (2025-03-21)
 
 - (eifel-tech) Renaming
-
-### 0.0.3 (2025-03-21)
-
-- (eifel-tech) Dependency updates
-
-### 0.0.2 (2025-03-21)
-
-- (eifel-tech) Changes for adapter checker
 
 ## License
 

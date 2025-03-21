@@ -15,45 +15,6 @@
 				"pl": "Zmiana nazwy",
 				"uk": "Перейменування",
 				"zh-cn": "重命名"
-			},
-			"0.0.3": {
-				"en": "Dependency updates",
-				"de": "Dependency updates",
-				"ru": "Обновления зависимостей",
-				"pt": "Atualizações de dependência",
-				"nl": "Afhankelijkheidsupdates",
-				"fr": "Mises à jour sur la dépendance",
-				"it": "Aggiornamenti di dipendenza",
-				"es": "Actualizaciones de dependencia",
-				"pl": "Aktualizacje zależności",
-				"uk": "Оновлення залежності",
-				"zh-cn": "依赖性更新"
-			},
-			"0.0.2": {
-				"en": "Changes for adapter checker",
-				"de": "Änderungen für Adapter-Checker",
-				"ru": "Изменения в Adapter Checker",
-				"pt": "Alterações para o verificador do adaptador",
-				"nl": "Wijzigingen voor adaptercontrole",
-				"fr": "Modifications pour le vérificateur d'adaptateur",
-				"it": "Modifiche per l'adattatore checker",
-				"es": "Cambios para el control de adaptador",
-				"pl": "Zmiany do sprawdzania adaptera",
-				"uk": "Зміни для перевірки адаптера",
-				"zh-cn": "适配器检查器的更改"
-			},
-			"0.0.1": {
-				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"uk": "Початкова версія",
-				"zh-cn": "首次出版"
 			}
 		},
 		"titleLang": {
