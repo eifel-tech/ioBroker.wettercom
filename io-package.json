@@ -1,6 +1,6 @@
 {
 	"common": {
-		"name": "wetter_com",
+		"name": "wettercom",
 		"version": "0.0.1",
 		"news": {
 			"0.0.1": {
@@ -50,10 +50,10 @@
 			"license": "MIT"
 		},
 		"platform": "Javascript/Node.js",
-		"icon": "wetter_com.png",
+		"icon": "wettercom.png",
 		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/eifel-tech/ioBroker.wetter_com/main/admin/wetter_com.png",
-		"readme": "https://github.com/eifel-tech/ioBroker.wetter_com/blob/main/README.md",
+		"extIcon": "https://raw.githubusercontent.com/eifel-tech/ioBroker.wettercom/main/admin/wettercom.png",
+		"readme": "https://github.com/eifel-tech/ioBroker.wettercom/blob/main/README.md",
 		"loglevel": "info",
 		"tier": 3,
 		"mode": "schedule",

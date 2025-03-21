@@ -1,12 +1,12 @@
 {
-  "name": "iobroker.wetter_com",
+  "name": "iobroker.wettercom",
   "version": "0.0.1",
   "description": "Reads weather forecast data from wetter.com api",
   "author": {
     "name": "eifel-tech",
     "email": "hikaso@gmx.net"
   },
-  "homepage": "https://github.com/eifel-tech/ioBroker.wetter_com",
+  "homepage": "https://github.com/eifel-tech/ioBroker.wettercom",
   "license": "MIT",
   "keywords": [
     "weather",
@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/eifel-tech/ioBroker.wetter_com.git"
+    "url": "https://github.com/eifel-tech/ioBroker.wettercom.git"
   },
   "engines": {
     "node": ">= 20"
@@ -73,7 +73,7 @@
     "release": "release-script"
   },
   "bugs": {
-    "url": "https://github.com/eifel-tech/ioBroker.wetter_com/issues"
+    "url": "https://github.com/eifel-tech/ioBroker.wettercom/issues"
   },
   "readmeFilename": "README.md"
 }

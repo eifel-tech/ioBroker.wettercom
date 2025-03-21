@@ -1,17 +1,17 @@
-![Logo](admin/wetter_com.png)
+![Logo](admin/wettercom.png)
 
-# ioBroker.wetter_com
+# ioBroker.wettercom
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.wetter_com.svg)](https://www.npmjs.com/package/iobroker.wetter_com)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.cwetter_com.svg)](https://www.npmjs.com/package/iobroker.wetter_com)
-![Number of Installations](https://iobroker.live/badges/wetter_com-installed.svg)
+[![NPM version](https://img.shields.io/npm/v/iobroker.wettercom.svg)](https://www.npmjs.com/package/iobroker.wettercom)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.wettercom.svg)](https://www.npmjs.com/package/iobroker.wettercom)
+![Number of Installations](https://iobroker.live/badges/wettercom-installed.svg)
 
-![GitHub](https://img.shields.io/github/license/eifel-tech/iobroker.wetter_com?style=flat-square)
-![GitHub repo size](https://img.shields.io/github/repo-size/eifel-tech/iobroker.wetter_com?logo=github&style=flat-square)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/eifel-tech/iobroker.wetter_com?logo=github&style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/eifel-tech/iobroker.wetter_com?logo=github&style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/eifel-tech/iobroker.wetter_com?logo=github&style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/eifel-tech/iobroker.wetter_com/test-and-release.yml?branch=master&logo=github&style=flat-square)
+![GitHub](https://img.shields.io/github/license/eifel-tech/iobroker.wettercom?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/eifel-tech/iobroker.wettercom?logo=github&style=flat-square)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/eifel-tech/iobroker.wettercom?logo=github&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/eifel-tech/iobroker.wettercom?logo=github&style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/eifel-tech/iobroker.wettercom?logo=github&style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/eifel-tech/iobroker.wettercom/test-and-release.yml?branch=master&logo=github&style=flat-square)
 
 Reads weather forecast data from [wetter.com API](https://www.wetter.com/).
 
@@ -21,7 +21,7 @@ You need an API-Key on meteonomiqs.com. Register at https://www.meteonomiqs.com/
 
 ## Icons
 
-Access icons like `http://ip:8082/adapter/wetter_com/icons/d_0.svg`.
+Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 
 ## Changelog
 
