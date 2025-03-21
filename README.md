@@ -30,6 +30,10 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Dependency updates
+
 ### 0.0.2 (2025-03-21)
 
 - (eifel-tech) Changes for adapter checker
