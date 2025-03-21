@@ -44,7 +44,7 @@
 			"zh-cn": "从wetter.com读取天气预报数据API"
 		},
 		"authors": ["eifel-tech <hikaso@gmx.net>"],
-		"keywords": ["weather", "forecast", "wetter.com", "meteonomiqs"],
+		"keywords": ["weather", "forecast", "wetter.com", "meteonomiqs", "ioBroker"],
 		"licenseInformation": {
 			"type": "free",
 			"license": "MIT"
