@@ -12,7 +12,8 @@
     "weather",
     "forecast",
     "wetter.com",
-    "meteonomiqs"
+    "meteonomiqs",
+    "ioBroker"
   ],
   "repository": {
     "type": "git",
