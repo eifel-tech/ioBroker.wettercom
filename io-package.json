@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.0.5",
+		"version": "0.0.6",
 		"news": {
+			"0.0.6": {
+				"en": "Custom forecast days",
+				"de": "Individuelle Vorhersagetage",
+				"ru": "Обычные прогнозные дни",
+				"pt": "Dias de previsão personalizada",
+				"nl": "Aangepaste prognosedagen",
+				"fr": "Jours de prévision personnalisés",
+				"it": "Giorni di previsione personalizzati",
+				"es": "Días de previsión",
+				"pl": "Niestandardowe dni prognozowania",
+				"uk": "Індивідуальні прогнозні дні",
+				"zh-cn": "自定义预测日"
+			},
 			"0.0.5": {
 				"en": "Changes from adapter checker",
 				"de": "Änderungen am Adapter-Checker",
