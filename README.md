@@ -29,6 +29,11 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Custom forecast days
+
 ### 0.0.5 (2025-03-21)
 
 - (eifel-tech) Changes from adapter checker

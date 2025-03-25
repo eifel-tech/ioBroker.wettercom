@@ -3,5 +3,7 @@
 	"API_key_help": "Saisissez la touche API que vous avez reçue",
 	"systemlocation": "Adopter l'emplacement à partir des paramètres du système",
 	"latitude": "Latitude",
-	"longitude": "Longitude"
+	"longitude": "Longitude",
+	"forecastdays": "Jours de prévision",
+	"forecastdays_help": "Pendant combien de jours les prévisions doivent-elles être récupérées ?"
 }

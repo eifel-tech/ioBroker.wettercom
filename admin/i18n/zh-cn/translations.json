@@ -3,5 +3,7 @@
 	"API_key_help": "输入您收到的 API 密钥",
 	"systemlocation": "从系统设置中选择位置",
 	"latitude": "纬度",
-	"longitude": "经度"
+	"longitude": "经度",
+	"forecastdays": "预测日",
+	"forecastdays_help": "应检索多少天的预测？"
 }

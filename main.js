@@ -98,6 +98,9 @@ class WetterCom extends utils.Adapter {
 
 				if (date !== curDate.toLocaleDateString()) {
 					dayCounter++;
+					if (dayCounter > this.config.forecastDays) {
+						break;
+					}
 					date = curDate.toLocaleDateString();
 				}
 

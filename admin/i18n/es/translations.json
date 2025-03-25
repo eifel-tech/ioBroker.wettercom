@@ -3,5 +3,7 @@
 	"API_key_help": "Introduzca la clave de API que recibió",
 	"systemlocation": "Adoptar ubicación desde la configuración del sistema",
 	"latitude": "Latitud",
-	"longitude": "Longitud"
+	"longitude": "Longitud",
+	"forecastdays": "Días prefabricados",
+	"forecastdays_help": "¿Para cuántos días se debe recuperar el pronóstico?"
 }

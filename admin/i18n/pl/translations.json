@@ -3,5 +3,7 @@
 	"API_key_help": "Wprowadź otrzymany klucz API",
 	"systemlocation": "Przyjęcie lokalizacji z ustawień systemu",
 	"latitude": "Szerokość geograficzna",
-	"longitude": "Długość"
+	"longitude": "Długość",
+	"forecastdays": "Terminy",
+	"forecastdays_help": "Na ile dni należy pobrać prognozę?"
 }

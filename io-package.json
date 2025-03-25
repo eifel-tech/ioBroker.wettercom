@@ -98,7 +98,8 @@
 		"key": "",
 		"useSystemLocation": false,
 		"latitude": 0,
-		"longitude": 0
+		"longitude": 0,
+		"forecastDays": 16
 	},
 	"objects": [],
 	"instanceObjects": []

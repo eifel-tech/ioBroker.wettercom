@@ -3,5 +3,7 @@
 	"API_key_help": "Voer de API-sleutel in die u hebt ontvangen",
 	"systemlocation": "Locatie goedkeuren vanaf systeeminstellingen",
 	"latitude": "Breedtegraad",
-	"longitude": "Lengtegraad"
+	"longitude": "Lengtegraad",
+	"forecastdays": "Prognosedagen",
+	"forecastdays_help": "Voor hoeveel dagen moet de voorspelling worden opgehaald?"
 }

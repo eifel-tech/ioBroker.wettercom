@@ -3,5 +3,7 @@
 	"API_key_help": "Введіть ключ API, який ви отримали",
 	"systemlocation": "Прийняти розташування з системних налаштувань",
 	"latitude": "Прованс",
-	"longitude": "Довга"
+	"longitude": "Довга",
+	"forecastdays": "Погода",
+	"forecastdays_help": "На скільки днів потрібно отримати прогноз?"
 }

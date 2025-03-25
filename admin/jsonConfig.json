@@ -46,6 +46,19 @@
 			"disabled": "data.useSystemLocation",
 			"label": "longitude",
 			"help": "longitude"
+		},
+		"forecastDays": {
+			"xs": 12,
+			"sm": 12,
+			"md": 6,
+			"lg": 4,
+			"xl": 4,
+			"type": "number",
+			"min": 1,
+			"max": 16,
+			"label": "forecastdays",
+			"help": "forecastdays_help",
+			"newLine": true
 		}
 	}
 }
