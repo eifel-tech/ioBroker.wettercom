@@ -24,6 +24,50 @@ class WetterCom extends utils.Adapter {
 		this.post_url = "/hourly";
 
 		this.summaryMap = new Map();
+		this.weatherStateMap = new Map();
+		this.weatherStateMap.set(0, "sonnig");
+		this.weatherStateMap.set(1, "leicht bewölkt");
+		this.weatherStateMap.set(2, "wolkig");
+		this.weatherStateMap.set(3, "bedeckt");
+		this.weatherStateMap.set(4, "Nebel");
+		this.weatherStateMap.set(5, "Sprühregen");
+		this.weatherStateMap.set(6, "Regen");
+		this.weatherStateMap.set(7, "Schnee");
+		this.weatherStateMap.set(8, "Schauer");
+		this.weatherStateMap.set(9, "Gewitter");
+		this.weatherStateMap.set(10, "teilweise bewölkt");
+		this.weatherStateMap.set(20, "wolkig");
+		this.weatherStateMap.set(21, "wolkig");
+		this.weatherStateMap.set(30, "bedeckt");
+		this.weatherStateMap.set(40, "Nebel");
+		this.weatherStateMap.set(45, "Nebel");
+		this.weatherStateMap.set(48, "Nebel mit Frosterscheinungen");
+		this.weatherStateMap.set(49, "Nebel mit Frosterscheinungen");
+		this.weatherStateMap.set(51, "leichter Sprühregen");
+		this.weatherStateMap.set(55, "starker Sprühregen");
+		this.weatherStateMap.set(56, "leichter Sprühregen, Frost");
+		this.weatherStateMap.set(57, "starker Sprühregen, Frost");
+		this.weatherStateMap.set(60, "leichter Regen");
+		this.weatherStateMap.set(61, "leichter Regen");
+		this.weatherStateMap.set(63, "mäßiger Regen");
+		this.weatherStateMap.set(65, "starker Regen");
+		this.weatherStateMap.set(66, "leichter gefrierender Regen");
+		this.weatherStateMap.set(67, "mäßiger bis starker gefrierender Regen");
+		this.weatherStateMap.set(68, "leichter Schneeregen");
+		this.weatherStateMap.set(69, "starker Schneeregen");
+		this.weatherStateMap.set(70, "leichter Schneefall");
+		this.weatherStateMap.set(71, "leichter Schneefall");
+		this.weatherStateMap.set(73, "mäßiger Schneefall");
+		this.weatherStateMap.set(75, "starker Schneefall");
+		this.weatherStateMap.set(80, "leichter Schauer");
+		this.weatherStateMap.set(81, "Schauer");
+		this.weatherStateMap.set(82, "starker Schauer");
+		this.weatherStateMap.set(83, "leichter Schneeschauer");
+		this.weatherStateMap.set(84, "starker Schneeschauer");
+		this.weatherStateMap.set(85, "leichter Schneefall");
+		this.weatherStateMap.set(86, "mäßiger bis starker Schneefall");
+		this.weatherStateMap.set(95, "leichtes Gewitter");
+		this.weatherStateMap.set(96, "schweres Gewitter");
 	}
 
 	/**
@@ -260,6 +304,7 @@ class WetterCom extends utils.Adapter {
 			this.setState(key + ".windSpeed", this.avg(value.windSpeedHours), true);
 
 			//Wettersymbol
+			const summaryState = this.getMostOftenWeatherState(value.iconStateHours)[0];
 			await this.setObjectNotExistsAsync(key.replace(this.FORBIDDEN_CHARS, "_") + ".weatherIcon", {
 				type: "state",
 				common: {
@@ -273,13 +318,22 @@ class WetterCom extends utils.Adapter {
 			});
 			this.setState(
 				key + ".weatherIcon",
-				"/adapter/" +
-					this.name +
-					"/icons/weather/svg/d_" +
-					this.getMostOftenWeatherState(value.iconStateHours)[0] +
-					".svg",
+				"/adapter/" + this.name + "/icons/weather/svg/d_" + summaryState + ".svg",
 				true,
 			);
+			//Wettertext
+			await this.setObjectNotExistsAsync(key.replace(this.FORBIDDEN_CHARS, "_") + ".weatherText", {
+				type: "state",
+				common: {
+					name: "weathertext",
+					type: "string",
+					role: "indicator",
+					write: false,
+					read: true,
+				},
+				native: {},
+			});
+			this.setState(key + ".weatherText", this.weatherStateMap.get(summaryState), true);
 		}
 	}
 
