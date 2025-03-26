@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.0.8",
+		"version": "0.0.9",
 		"news": {
+			"0.0.9": {
+				"en": "Average clouds in every hour",
+				"de": "Durchschnittliche Bewölkung pro Stunde",
+				"ru": "Средние облака в каждый час",
+				"pt": "Nuvens médias em cada hora",
+				"nl": "Gemiddelde wolken in elk uur",
+				"fr": "Moyenne des nuages chaque heure",
+				"it": "Nuvole medie in ogni ora",
+				"es": "Nubes promedio en cada hora",
+				"pl": "Średnie chmury w każdej godzinie",
+				"uk": "Середня хмара в кожну годину",
+				"zh-cn": "每个小时的平均云量"
+			},
 			"0.0.8": {
 				"en": "Average weather text in daily summary",
 				"de": "Durchschnittlicher Wettertext in der täglichen Zusammenfassung",
