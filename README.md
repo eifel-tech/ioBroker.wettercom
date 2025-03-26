@@ -29,8 +29,7 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.0.8 (2025-03-26)
 
 - (eifel-tech) Average weather text in daily summary
 

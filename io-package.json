@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.0.7",
+		"version": "0.0.8",
 		"news": {
+			"0.0.8": {
+				"en": "Average weather text in daily summary",
+				"de": "Durchschnittlicher Wettertext in der täglichen Zusammenfassung",
+				"ru": "Среднегодовой текст в ежедневном резюме",
+				"pt": "Texto médio do tempo em resumo diário",
+				"nl": "Gemiddelde weertekst in dagelijkse samenvatting",
+				"fr": "Texte météo moyen en résumé quotidien",
+				"it": "Testo medio del tempo in sintesi quotidiana",
+				"es": "Texto medio del tiempo en resumen diario",
+				"pl": "Średni tekst pogody w streszczenie",
+				"uk": "Середній погодний текст в щоденному резюме",
+				"zh-cn": "每日摘要中的平均天气文字"
+			},
 			"0.0.7": {
 				"en": "Average weather state in daily summary",
 				"de": "Durchschnittliches Wettersymbol in der täglichen Zusammenfassung",
