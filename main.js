@@ -24,50 +24,51 @@ class WetterCom extends utils.Adapter {
 		this.post_url = "/hourly";
 
 		this.summaryMap = new Map();
-		this.weatherStateMap = new Map();
-		this.weatherStateMap.set(0, "sonnig");
-		this.weatherStateMap.set(1, "leicht bewölkt");
-		this.weatherStateMap.set(2, "wolkig");
-		this.weatherStateMap.set(3, "bedeckt");
-		this.weatherStateMap.set(4, "Nebel");
-		this.weatherStateMap.set(5, "Sprühregen");
-		this.weatherStateMap.set(6, "Regen");
-		this.weatherStateMap.set(7, "Schnee");
-		this.weatherStateMap.set(8, "Schauer");
-		this.weatherStateMap.set(9, "Gewitter");
-		this.weatherStateMap.set(10, "teilweise bewölkt");
-		this.weatherStateMap.set(20, "wolkig");
-		this.weatherStateMap.set(21, "wolkig");
-		this.weatherStateMap.set(30, "bedeckt");
-		this.weatherStateMap.set(40, "Nebel");
-		this.weatherStateMap.set(45, "Nebel");
-		this.weatherStateMap.set(48, "Nebel mit Frosterscheinungen");
-		this.weatherStateMap.set(49, "Nebel mit Frosterscheinungen");
-		this.weatherStateMap.set(51, "leichter Sprühregen");
-		this.weatherStateMap.set(55, "starker Sprühregen");
-		this.weatherStateMap.set(56, "leichter Sprühregen, Frost");
-		this.weatherStateMap.set(57, "starker Sprühregen, Frost");
-		this.weatherStateMap.set(60, "leichter Regen");
-		this.weatherStateMap.set(61, "leichter Regen");
-		this.weatherStateMap.set(63, "mäßiger Regen");
-		this.weatherStateMap.set(65, "starker Regen");
-		this.weatherStateMap.set(66, "leichter gefrierender Regen");
-		this.weatherStateMap.set(67, "mäßiger bis starker gefrierender Regen");
-		this.weatherStateMap.set(68, "leichter Schneeregen");
-		this.weatherStateMap.set(69, "starker Schneeregen");
-		this.weatherStateMap.set(70, "leichter Schneefall");
-		this.weatherStateMap.set(71, "leichter Schneefall");
-		this.weatherStateMap.set(73, "mäßiger Schneefall");
-		this.weatherStateMap.set(75, "starker Schneefall");
-		this.weatherStateMap.set(80, "leichter Schauer");
-		this.weatherStateMap.set(81, "Schauer");
-		this.weatherStateMap.set(82, "starker Schauer");
-		this.weatherStateMap.set(83, "leichter Schneeschauer");
-		this.weatherStateMap.set(84, "starker Schneeschauer");
-		this.weatherStateMap.set(85, "leichter Schneefall");
-		this.weatherStateMap.set(86, "mäßiger bis starker Schneefall");
-		this.weatherStateMap.set(95, "leichtes Gewitter");
-		this.weatherStateMap.set(96, "schweres Gewitter");
+		this.weatherStateMap = new Map([
+			[0, "sonnig"],
+			[1, "leicht bewölkt"],
+			[2, "wolkig"],
+			[3, "bedeckt"],
+			[4, "Nebel"],
+			[5, "Sprühregen"],
+			[6, "Regen"],
+			[7, "Schnee"],
+			[8, "Schauer"],
+			[9, "Gewitter"],
+			[10, "teilweise bewölkt"],
+			[20, "wolkig"],
+			[21, "wolkig"],
+			[30, "bedeckt"],
+			[40, "Nebel"],
+			[45, "Nebel"],
+			[48, "Nebel mit Frosterscheinungen"],
+			[49, "Nebel mit Frosterscheinungen"],
+			[51, "leichter Sprühregen"],
+			[55, "starker Sprühregen"],
+			[56, "leichter Sprühregen, Frost"],
+			[57, "starker Sprühregen, Frost"],
+			[60, "leichter Regen"],
+			[61, "leichter Regen"],
+			[63, "mäßiger Regen"],
+			[65, "starker Regen"],
+			[66, "leichter gefrierender Regen"],
+			[67, "mäßiger bis starker gefrierender Regen"],
+			[68, "leichter Schneeregen"],
+			[69, "starker Schneeregen"],
+			[70, "leichter Schneefall"],
+			[71, "leichter Schneefall"],
+			[73, "mäßiger Schneefall"],
+			[75, "starker Schneefall"],
+			[80, "leichter Schauer"],
+			[81, "Schauer"],
+			[82, "starker Schauer"],
+			[83, "leichter Schneeschauer"],
+			[84, "starker Schneeschauer"],
+			[85, "leichter Schneefall"],
+			[86, "mäßiger bis starker Schneefall"],
+			[95, "leichtes Gewitter"],
+			[96, "schweres Gewitter"],
+		]);
 	}
 
 	/**
@@ -333,6 +334,7 @@ class WetterCom extends utils.Adapter {
 				},
 				native: {},
 			});
+			// @ts-ignore
 			this.setState(key + ".weatherText", this.weatherStateMap.get(summaryState), true);
 		}
 	}
