@@ -217,6 +217,27 @@ class WetterCom extends utils.Adapter {
 					);
 				}
 
+				//Durchschnittliche Bewölkung hinzufügen
+				if (key === "clouds") {
+					const windName = channelName + "." + key + ".avg";
+					await this.setObjectNotExistsAsync(windName, {
+						type: "state",
+						common: {
+							name: "average",
+							type: "number",
+							role: "indicator",
+							write: false,
+							read: true,
+						},
+						native: {},
+					});
+					this.setState(
+						windName,
+						this.avg([item.clouds.high, item.clouds.low, item.clouds.middle, item.clouds.eights]),
+						true,
+					);
+				}
+
 				this.createDpWithState(newChannelName, item[key]);
 			} else {
 				let value = item[key];
