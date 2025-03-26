@@ -258,6 +258,28 @@ class WetterCom extends utils.Adapter {
 			//Wind
 			await this.createNumberObjectNotExists(key, "windSpeed", -1, "km/h");
 			this.setState(key + ".windSpeed", this.avg(value.windSpeedHours), true);
+
+			//Wettersymbol
+			await this.setObjectNotExistsAsync(key.replace(this.FORBIDDEN_CHARS, "_") + ".weatherIcon", {
+				type: "state",
+				common: {
+					name: "weathericon",
+					type: "string",
+					role: "indicator",
+					write: false,
+					read: true,
+				},
+				native: {},
+			});
+			this.setState(
+				key + ".weatherIcon",
+				"/adapter/" +
+					this.name +
+					"/icons/weather/svg/d_" +
+					this.getMostOftenWeatherState(value.iconStateHours)[0] +
+					".svg",
+				true,
+			);
 		}
 	}
 
@@ -278,6 +300,7 @@ class WetterCom extends utils.Adapter {
 				rainHours: [],
 				rainProbHours: [],
 				windSpeedHours: [],
+				iconStateHours: [],
 			});
 		}
 		const entry = this.summaryMap.get(dayChannelName);
@@ -298,6 +321,8 @@ class WetterCom extends utils.Adapter {
 		entry.windGusts = Math.max(entry.windGusts, item.wind.gusts.value);
 		//Windgeschwindigkeit
 		entry.windSpeedHours.push(item.wind.avg);
+		//Wettersymbol
+		entry.iconStateHours.push(item.weather.state);
 	}
 
 	async createNumberObjectNotExists(id, name, def, unit) {
@@ -360,6 +385,19 @@ class WetterCom extends utils.Adapter {
 	avg(numArr) {
 		const sum = numArr.reduce((a, b) => a + b, 0);
 		return Math.round(sum / numArr.length);
+	}
+
+	getMostOftenWeatherState(arr) {
+		return arr
+			.sort((a, b) => a - b)
+			.reduce(
+				// @ts-ignore
+				(acc, cur, i, { [i - 1]: last }) =>
+					(cur === last ? acc[acc.length - 1].push(cur) : acc.push([cur])) && acc,
+				[],
+			)
+			.sort((a, b) => b.length - a.length)
+			.reduce((a, b, _, [first]) => (first.length === b.length ? [...a, b[0]] : a), []);
 	}
 
 	/**
