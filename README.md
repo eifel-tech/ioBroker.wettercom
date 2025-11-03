@@ -29,6 +29,12 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Using Api-Version 4.0
+- (eifel-tech) Dependency updates
+
 ### 0.0.9 (2025-03-26)
 
 - (eifel-tech) Average clouds in every hour

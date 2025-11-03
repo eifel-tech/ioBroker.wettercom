@@ -20,7 +20,7 @@ class WetterCom extends utils.Adapter {
 		this.on("ready", this.onReady.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 
-		this.pre_url = "https://forecast.meteonomiqs.com/v3_1/forecast/";
+		this.pre_url = "https://forecast.meteonomiqs.com/v4_0/forecast/";
 		this.post_url = "/hourly";
 
 		this.summaryMap = new Map();
@@ -139,7 +139,7 @@ class WetterCom extends utils.Adapter {
 			let dayCounter = 0;
 			for (let i = 0; i < response.items.length; i++) {
 				const item = response.items[i];
-				const curDate = new Date(item.date);
+				const curDate = new Date(item.from);
 
 				if (date !== curDate.toLocaleDateString()) {
 					dayCounter++;
