@@ -29,8 +29,7 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.1.0 (2025-11-03)
 
 - (eifel-tech) Using Api-Version 4.0
 - (eifel-tech) Dependency updates

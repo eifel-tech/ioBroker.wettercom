@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.0.9",
+		"version": "0.1.0",
 		"news": {
+			"0.1.0": {
+				"en": "Using Api-Version 4.0",
+				"de": "Api-Version 4.0",
+				"ru": "Использование Api-Version 4.0",
+				"pt": "Usando a Api- Version 4.0",
+				"nl": "Api-Version 4.0 gebruiken",
+				"fr": "Utilisation de Api-Version 4.0",
+				"it": "Utilizzo di Api-Version 4.0",
+				"es": "Utilizando Api-Version 4.0",
+				"pl": "Korzystanie z wersji Api- 4.0",
+				"uk": "Використання Api-Version 4.0",
+				"zh-cn": "使用 Api- Version 4. 0"
+			},
 			"0.0.9": {
 				"en": "Average clouds in every hour",
 				"de": "Durchschnittliche Bewölkung pro Stunde",
