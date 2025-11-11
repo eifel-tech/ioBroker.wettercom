@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.1.0",
+		"version": "0.1.1",
 		"news": {
+			"0.1.1": {
+				"en": "Doesn't pay attention to a date in the past in the object tree",
+				"de": "Achtet nicht auf ein Datum in der Vergangenheit im Objektbaum",
+				"ru": "Не обращает внимания на дату в прошлом, находясь в объектном дереве",
+				"pt": "Não presta atenção a uma data no passado enquanto estiver na árvore de objetos",
+				"nl": "Let niet op een datum in het verleden terwijl in de objectboom",
+				"fr": "Ne fait pas attention à une date dans le passé alors que dans l'arbre d'objet",
+				"it": "Non presta attenzione ad una data in passato mentre nell'albero dell'oggetto",
+				"es": "No presta atención a una fecha en el pasado mientras que en el árbol objeto",
+				"pl": "Nie zwraca uwagi na datę w przeszłości podczas gdy w drzewie obiektu",
+				"uk": "Не звертайте увагу на дату в минулому, коли в дереві об'єкта",
+				"zh-cn": "不注意过去在对象树上的日期"
+			},
 			"0.1.0": {
 				"en": "Using Api-Version 4.0",
 				"de": "Api-Version 4.0",
@@ -80,19 +93,6 @@
 				"pl": "Zmiany z sprawdzania adaptera",
 				"uk": "Зміни з адаптера",
 				"zh-cn": "适配器检查器的更改"
-			},
-			"0.0.4": {
-				"en": "Renaming",
-				"de": "Umbenennung",
-				"ru": "Переименование",
-				"pt": "Renaming",
-				"nl": "Hernoemen",
-				"fr": "Renaming",
-				"it": "Rinominazione",
-				"es": "Renaming",
-				"pl": "Zmiana nazwy",
-				"uk": "Перейменування",
-				"zh-cn": "重命名"
 			}
 		},
 		"titleLang": {

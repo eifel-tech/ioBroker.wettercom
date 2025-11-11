@@ -30,9 +30,9 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS**
+### 0.1.1 (2025-11-11)
 
-- (eifel-tech) Doesn't pay attention to a date in the past while in the object tree
+- (eifel-tech) Doesn't pay attention to a date in the past in the object tree
 
 ### 0.1.0 (2025-11-03)
 
