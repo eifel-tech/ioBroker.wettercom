@@ -29,6 +29,11 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Doesn't pay attention to a date in the past while in the object tree
+
 ### 0.1.0 (2025-11-03)
 
 - (eifel-tech) Using Api-Version 4.0

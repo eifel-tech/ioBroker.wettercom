@@ -139,14 +139,22 @@ class WetterCom extends utils.Adapter {
 			let dayCounter = 0;
 			for (let i = 0; i < response.items.length; i++) {
 				const item = response.items[i];
-				const curDate = new Date(item.from);
 
-				if (date !== curDate.toLocaleDateString()) {
+				const curDate = new Date(item.from);
+				curDate.setHours(0, 0, 0, 0);
+				const nowDate = new Date();
+				nowDate.setHours(0, 0, 0, 0);
+				if (curDate < nowDate) {
+					continue;
+				}
+
+				const curDateTime = new Date(item.from);
+				if (date !== curDateTime.toLocaleDateString()) {
 					dayCounter++;
 					if (dayCounter > this.config.forecastDays) {
 						break;
 					}
-					date = curDate.toLocaleDateString();
+					date = curDateTime.toLocaleDateString();
 				}
 
 				const dayChannelName = "Day_" + this.pad(dayCounter, 2);
@@ -158,11 +166,11 @@ class WetterCom extends utils.Adapter {
 					native: {},
 				});
 
-				const channelName = dayChannelName + ".Hour_" + this.pad(curDate.getHours(), 2);
+				const channelName = dayChannelName + ".Hour_" + this.pad(curDateTime.getHours(), 2);
 				await this.setObjectNotExistsAsync(channelName, {
 					type: "channel",
 					common: {
-						name: curDate.toLocaleTimeString(),
+						name: curDateTime.toLocaleTimeString(),
 					},
 					native: {},
 				});
