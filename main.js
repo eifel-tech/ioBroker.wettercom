@@ -319,11 +319,19 @@ class WetterCom extends utils.Adapter {
 
 			//Regenmenge
 			await this.createNumberObjectNotExists(key, "rain", 0, "mm");
-			this.setState(key + ".rain", this.avg(value.rainHours), true);
+			this.setState(key + ".rain", this.sum(value.rainHours), true);
 
 			//Regenwahrscheinlichkeit
 			await this.createNumberObjectNotExists(key, "rainProbability", 0, "%");
 			this.setState(key + ".rainProbability", this.avg(value.rainProbHours), true);
+
+			//Sonnenstunden
+			await this.createNumberObjectNotExists(key, "sunHours", 0, "h");
+			this.setState(key + ".sunHours", this.sum(value.sunHours), true);
+
+			//Schneefallgrenze
+			await this.createNumberObjectNotExists(key, "snowLine", 0, "m");
+			this.setState(key + ".snowLine", this.avg(value.snowLine), true);
 
 			//max Windböen
 			await this.createNumberObjectNotExists(key, "maxWindGusts", -1, "km/h");
@@ -384,6 +392,8 @@ class WetterCom extends utils.Adapter {
 				pressureHours: [],
 				rainHours: [],
 				rainProbHours: [],
+				sunHours: [],
+				snowLine: [],
 				windSpeedHours: [],
 				iconStateHours: [],
 			});
@@ -402,6 +412,10 @@ class WetterCom extends utils.Adapter {
 		entry.rainHours.push(item.prec.sum);
 		//Regenwahrscheinlichkeit
 		entry.rainProbHours.push(item.prec.probability);
+		//Sonnenstunden
+		entry.sunHours.push(item.sunHours);
+		//Schneefallgrenze
+		entry.snowLine.push(item.prec.snowLine);
 		//max Windböen
 		entry.windGusts = Math.max(entry.windGusts, item.wind.gusts.value);
 		//Windgeschwindigkeit
@@ -468,8 +482,11 @@ class WetterCom extends utils.Adapter {
 	}
 
 	avg(numArr) {
-		const sum = numArr.reduce((a, b) => a + b, 0);
-		return Math.round(sum / numArr.length);
+		return Math.round(this.sum(numArr) / numArr.length);
+	}
+
+	sum(numArr) {
+		return numArr.reduce((a, b) => a + b, 0);
 	}
 
 	getMostOftenWeatherState(arr) {

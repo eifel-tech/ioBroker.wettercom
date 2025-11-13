@@ -30,6 +30,12 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Bugfix: Amount of rain as sum
+- (eifel-tech) Added forecast sun hours
+- (eifel-tech) Added average snow line
+
 ### 0.1.1 (2025-11-11)
 
 - (eifel-tech) Doesn't pay attention to a date in the past in the object tree
