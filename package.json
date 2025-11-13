@@ -1,6 +1,6 @@
 {
   "name": "iobroker.wettercom",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reads weather forecast data from wetter.com api",
   "author": {
     "name": "eifel-tech",

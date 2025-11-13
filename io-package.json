@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.1.1",
+		"version": "0.1.2",
 		"news": {
+			"0.1.2": {
+				"en": "Bugfix: Amount of rain as sum\nAdded forecast sun hours\nAdded average snow line",
+				"de": "Bugfix: Regenmenge als Summe\nSonnenstunden hinzugefügt\nDurchschnittliche Schneefallgrenze hinzugefügt",
+				"ru": "Багфикс: Количество осадков как сумма\nДобавлен прогноз солнечных часов\nСредняя снежная линия",
+				"pt": "Correcção de Erros: Quantidade de chuva como soma\nPrevisão adicionada horas de sol\nAdicionado linha média de neve",
+				"nl": "Bugfix: Bedrag van de regen als som\nToegevoegde voorspelling zonuren\nToegevoegd gemiddelde sneeuwlijn",
+				"fr": "Correction : Quantité de pluie en somme\nPrévisions supplémentaires des heures de soleil\nLigne de neige moyenne ajoutée",
+				"it": "Bugfix: Importo della pioggia come somma\nPrevisione del sole\nAggiunto la linea di neve media",
+				"es": "Bugfix: Cantidad de lluvia como suma\nHoras de pronóstico\nLínea media de nieve",
+				"pl": "Bugfix: Kwota deszczu jako suma\nDodano przewidywane godziny słońca\nDodano średnią linię śnieżną",
+				"uk": "Помилки: Сума дощу\nДоданий прогноз сонячних годин\nДо середнього снігу",
+				"zh-cn": "错误修正 : 雨量为总和\n增加的预测太阳时数\n添加平均雪线"
+			},
 			"0.1.1": {
 				"en": "Doesn't pay attention to a date in the past in the object tree",
 				"de": "Achtet nicht auf ein Datum in der Vergangenheit im Objektbaum",
@@ -80,19 +93,6 @@
 				"pl": "Niestandardowe dni prognozowania",
 				"uk": "Індивідуальні прогнозні дні",
 				"zh-cn": "自定义预测日"
-			},
-			"0.0.5": {
-				"en": "Changes from adapter checker",
-				"de": "Änderungen am Adapter-Checker",
-				"ru": "Изменения в Adapter Checker",
-				"pt": "Alterações do verificador do adaptador",
-				"nl": "Wijzigingen van de adaptercontrole",
-				"fr": "Modifications de l'adaptateur checker",
-				"it": "Modifiche dall'adattatore checker",
-				"es": "Cambios desde el control de adaptador",
-				"pl": "Zmiany z sprawdzania adaptera",
-				"uk": "Зміни з адаптера",
-				"zh-cn": "适配器检查器的更改"
 			}
 		},
 		"titleLang": {
