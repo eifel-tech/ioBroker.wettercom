@@ -29,6 +29,11 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Fresh snow accumulation as daily summary (Issue #125)
+
 ### 0.1.2 (2025-11-13)
 
 - (eifel-tech) Bugfix: Amount of rain as sum

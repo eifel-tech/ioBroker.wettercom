@@ -333,6 +333,10 @@ class WetterCom extends utils.Adapter {
 			await this.createNumberObjectNotExists(key, "snowLine", 0, "m");
 			this.setState(key + ".snowLine", this.avg(value.snowLine), true);
 
+			//Neuschneemenge
+			await this.createNumberObjectNotExists(key, "freshSnow", 0, "cm");
+			this.setState(key + ".freshSnow", this.sum(value.freshSnow), true);
+
 			//max Windböen
 			await this.createNumberObjectNotExists(key, "maxWindGusts", -1, "km/h");
 			this.setState(key + ".maxWindGusts", value.windGusts, true);
@@ -394,6 +398,7 @@ class WetterCom extends utils.Adapter {
 				rainProbHours: [],
 				sunHours: [],
 				snowLine: [],
+				freshSnow: [],
 				windSpeedHours: [],
 				iconStateHours: [],
 			});
@@ -416,6 +421,8 @@ class WetterCom extends utils.Adapter {
 		entry.sunHours.push(item.sunHours);
 		//Schneefallgrenze
 		entry.snowLine.push(item.prec.snowLine);
+		//Neuschneemenge
+		entry.freshSnow.push(item.freshSnow);
 		//max Windböen
 		entry.windGusts = Math.max(entry.windGusts, item.wind.gusts.value);
 		//Windgeschwindigkeit
