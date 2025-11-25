@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.1.2",
+		"version": "0.1.3",
 		"news": {
+			"0.1.3": {
+				"en": "Fresh snow accumulation as daily summary (Issue #125)",
+				"de": "Neuschneemenge als tägliche Zusammenfassung (Issue #125)",
+				"ru": "Накопление свежего снега в виде ежедневной сводки (выпуск No125)",
+				"pt": "Acumulação de neve fresca como resumo diário (Issué # 125)",
+				"nl": "Verse sneeuwophoping als dagelijkse samenvatting (Issue #125)",
+				"fr": "L'accumulation de neige fraîche comme résumé quotidien (Issue 125)",
+				"it": "Accumulazione di neve fresca come sommario giornaliero (Essue #125)",
+				"es": "La acumulación de nieve fresca como resumen diario (Isue #125)",
+				"pl": "Akumulacja świeżego śniegu jako podsumowanie dnia (wydanie # 125)",
+				"uk": "Свіже скупчення снігу як щоденне резюме (Isue #125)",
+				"zh-cn": "新鲜积雪作为每日摘要(问题125)"
+			},
 			"0.1.2": {
 				"en": "Bugfix: Amount of rain as sum\nAdded forecast sun hours\nAdded average snow line",
 				"de": "Bugfix: Regenmenge als Summe\nSonnenstunden hinzugefügt\nDurchschnittliche Schneefallgrenze hinzugefügt",
@@ -80,19 +93,6 @@
 				"pl": "Średnia pogoda w podsumowaniu dziennym",
 				"uk": "Середня погодна держава в щоденному резюме",
 				"zh-cn": "平均天气状况,每日汇总"
-			},
-			"0.0.6": {
-				"en": "Custom forecast days",
-				"de": "Individuelle Vorhersagetage",
-				"ru": "Обычные прогнозные дни",
-				"pt": "Dias de previsão personalizada",
-				"nl": "Aangepaste prognosedagen",
-				"fr": "Jours de prévision personnalisés",
-				"it": "Giorni di previsione personalizzati",
-				"es": "Días de previsión",
-				"pl": "Niestandardowe dni prognozowania",
-				"uk": "Індивідуальні прогнозні дні",
-				"zh-cn": "自定义预测日"
 			}
 		},
 		"titleLang": {
