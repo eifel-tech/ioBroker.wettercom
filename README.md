@@ -29,6 +29,7 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
 ### 0.1.3 (2025-11-25)
 
 - (eifel-tech) Fresh snow accumulation as daily summary (Issue #125)
@@ -76,7 +77,7 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 
 MIT License
 
-Copyright (c) 2025 eifel-tech <hikaso@gmx.net>
+Copyright (c) 2025-2026 eifel-tech <hikaso@gmx.net>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
