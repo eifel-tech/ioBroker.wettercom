@@ -139,6 +139,49 @@ class WetterCom extends utils.Adapter {
 		if (response.items) {
 			//Remove old Datapoints
 			await this.delObjectAsync("", { recursive: true });
+			await this.setObjectNotExistsAsync("info", {
+				type: "channel",
+				common: {
+					name: {
+						en: "Information",
+						de: "Information",
+						ru: "Информация",
+						pt: "Informação",
+						nl: "Informatie",
+						fr: "Informations",
+						it: "Informazioni",
+						es: "Información",
+						pl: "Informacje",
+						uk: "Інформація",
+						"zh-cn": "资料",
+					},
+				},
+				native: {},
+			});
+			await this.setObjectNotExistsAsync("info.apiExpired", {
+				type: "state",
+				common: {
+					role: "indicator.maintenance",
+					name: {
+						en: "API-Key expired",
+						de: "API-Key abgelaufen",
+						ru: "Срок действия API-ключа истек.",
+						pt: "Chave da API expirada",
+						nl: "API-sleutel verlopen",
+						fr: "Clé API expirée",
+						it: "La chiave API è scaduta",
+						es: "La clave API ha caducado.",
+						pl: "Klucz API wygasł",
+						uk: "Термін дії ключа API закінчився.",
+						"zh-cn": "API密钥已过期",
+					},
+					type: "boolean",
+					read: true,
+					write: false,
+					def: false,
+				},
+				native: {},
+			});
 			this.log.debug("Removing old structure... done");
 
 			//Create Datapoints
