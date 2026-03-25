@@ -29,6 +29,11 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Recreating deleted Datapoints
+
 ### 0.1.4 (2026-03-25)
 
 - (eifel-tech) Show warning if API-Key is expired
