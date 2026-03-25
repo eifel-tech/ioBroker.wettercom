@@ -30,9 +30,9 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS**
+### 0.1.5 (2026-03-25)
 
-- (eifel-tech) Recreating deleted Datapoints
+- (eifel-tech) Recreating deleted datapoints
 
 ### 0.1.4 (2026-03-25)
 

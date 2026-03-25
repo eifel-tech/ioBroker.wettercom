@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.1.4",
+		"version": "0.1.5",
 		"news": {
+			"0.1.5": {
+				"en": "Recreating deleted datapoints",
+				"de": "Wiederherstellung gelöschter Datenpunkte",
+				"ru": "Восстановление удаленных точек данных",
+				"pt": "Recriando pontos de dados excluídos",
+				"nl": "Verwijderde datapunten opnieuw aanmaken",
+				"fr": "Recréation des points de données supprimés",
+				"it": "Ricreazione dei punti dati eliminati",
+				"es": "Recrear puntos de datos eliminados",
+				"pl": "Ponowne tworzenie usuniętych punktów danych",
+				"uk": "Відтворення видалених точок даних",
+				"zh-cn": "重新创建已删除的数据点"
+			},
 			"0.1.4": {
 				"en": "Show warning if API-Key is expired",
 				"de": "Warnung anzeigen, wenn API-Key abgelaufen ist",
