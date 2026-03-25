@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "wettercom",
-		"version": "0.1.3",
+		"version": "0.1.4",
 		"news": {
+			"0.1.4": {
+				"en": "Show warning if API-Key is expired",
+				"de": "Warnung anzeigen, wenn API-Key abgelaufen ist",
+				"ru": "Показать предупреждение, если API-Key истек",
+				"pt": "Mostrar o aviso se a chave da API estiver expirada",
+				"nl": "Waarschuwing tonen als de API-sleutel is verlopen",
+				"fr": "Afficher l'avertissement si API-Key est expiré",
+				"it": "Mostra avviso se API-Key è scaduto",
+				"es": "Mostrar advertencia si API-Key está vencido",
+				"pl": "Pokaż ostrzeżenie, jeśli API- Key wygasł",
+				"uk": "Показати попередження, якщо API-Key завершується",
+				"zh-cn": "显示 API- Key 过期的警告"
+			},
 			"0.1.3": {
 				"en": "Fresh snow accumulation as daily summary (Issue #125)",
 				"de": "Neuschneemenge als tägliche Zusammenfassung (Issue #125)",
@@ -80,19 +93,6 @@
 				"pl": "Średni tekst pogody w streszczenie",
 				"uk": "Середній погодний текст в щоденному резюме",
 				"zh-cn": "每日摘要中的平均天气文字"
-			},
-			"0.0.7": {
-				"en": "Average weather state in daily summary",
-				"de": "Durchschnittliches Wettersymbol in der täglichen Zusammenfassung",
-				"ru": "Среднее состояние погоды в ежедневном резюме",
-				"pt": "Estado do tempo médio em resumo diário",
-				"nl": "Gemiddelde weertoestand in dagelijkse samenvatting",
-				"fr": "Conditions météorologiques moyennes en résumé quotidien",
-				"it": "Stato medio del tempo in sintesi giornaliera",
-				"es": "Estado del tiempo promedio en resumen diario",
-				"pl": "Średnia pogoda w podsumowaniu dziennym",
-				"uk": "Середня погодна держава в щоденному резюме",
-				"zh-cn": "平均天气状况,每日汇总"
 			}
 		},
 		"titleLang": {
