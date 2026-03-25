@@ -30,6 +30,10 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 	### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS**
+
+- (eifel-tech) Show warning if API-Key is expired
+
 ### 0.1.3 (2025-11-25)
 
 - (eifel-tech) Fresh snow accumulation as daily summary (Issue #125)

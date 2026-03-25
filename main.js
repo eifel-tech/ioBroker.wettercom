@@ -110,11 +110,18 @@ class WetterCom extends utils.Adapter {
 				return res.data;
 			})
 			.catch((error) => {
+				if (error.response.status === 429) {
+					this.setState("info.apiExpired", true, true);
+				} else {
+					this.setState("info.apiExpired", false, true);
+				}
+				const statusText =
+					error.response.statusText == "" ? error.response.data.message : error.response.statusText;
 				this.log.error(
 					"Failed to get data. Check your API-key first. Server responsed with " +
 						error.response.status +
 						": " +
-						error.response.statusText,
+						statusText,
 				);
 			});
 
