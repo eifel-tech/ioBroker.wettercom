@@ -80,32 +80,6 @@
 				"pl": "Korzystanie z wersji Api- 4.0",
 				"uk": "Використання Api-Version 4.0",
 				"zh-cn": "使用 Api- Version 4. 0"
-			},
-			"0.0.9": {
-				"en": "Average clouds in every hour",
-				"de": "Durchschnittliche Bewölkung pro Stunde",
-				"ru": "Средние облака в каждый час",
-				"pt": "Nuvens médias em cada hora",
-				"nl": "Gemiddelde wolken in elk uur",
-				"fr": "Moyenne des nuages chaque heure",
-				"it": "Nuvole medie in ogni ora",
-				"es": "Nubes promedio en cada hora",
-				"pl": "Średnie chmury w każdej godzinie",
-				"uk": "Середня хмара в кожну годину",
-				"zh-cn": "每个小时的平均云量"
-			},
-			"0.0.8": {
-				"en": "Average weather text in daily summary",
-				"de": "Durchschnittlicher Wettertext in der täglichen Zusammenfassung",
-				"ru": "Среднегодовой текст в ежедневном резюме",
-				"pt": "Texto médio do tempo em resumo diário",
-				"nl": "Gemiddelde weertekst in dagelijkse samenvatting",
-				"fr": "Texte météo moyen en résumé quotidien",
-				"it": "Testo medio del tempo in sintesi quotidiana",
-				"es": "Texto medio del tiempo en resumen diario",
-				"pl": "Średni tekst pogody w streszczenie",
-				"uk": "Середній погодний текст в щоденному резюме",
-				"zh-cn": "每日摘要中的平均天气文字"
 			}
 		},
 		"titleLang": {
@@ -166,7 +140,7 @@
 		],
 		"globalDependencies": [
 			{
-				"admin": ">=7.4.10"
+				"admin": ">=7.6.20"
 			}
 		]
 	},
