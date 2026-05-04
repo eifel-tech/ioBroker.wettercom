@@ -81,6 +81,8 @@ Access icons like `http://ip:8082/adapter/wettercom/icons/d_0.svg`.
 
 - (eifel-tech) Renaming
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 MIT License
