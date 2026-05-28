@@ -1,0 +1,9 @@
+{
+    "API_key": "API Key",
+    "API_key_help": "Enter the API key you received",
+    "forecastdays": "Forecast days",
+    "forecastdays_help": "For how many days should the forecast be retrieved?",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "systemlocation": "Adopt location from system settings"
+}

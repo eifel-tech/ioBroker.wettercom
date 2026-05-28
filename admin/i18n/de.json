@@ -1,0 +1,9 @@
+{
+    "API_key": "API Key",
+    "API_key_help": "Hier den erhaltenen API-Key eintragen",
+    "forecastdays": "Vorhersagetage",
+    "forecastdays_help": "Für wie viele Tage soll die Vorhersage abgerufen werden?",
+    "latitude": "Breitengrad",
+    "longitude": "Längengrad",
+    "systemlocation": "Ort aus Systemeinstellungen übernehmen"
+}

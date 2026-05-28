@@ -1,0 +1,9 @@
+{
+    "API_key": "API-sleutel",
+    "API_key_help": "Voer de API-sleutel in die u hebt ontvangen",
+    "forecastdays": "Prognosedagen",
+    "forecastdays_help": "Voor hoeveel dagen moet de voorspelling worden opgehaald?",
+    "latitude": "Breedtegraad",
+    "longitude": "Lengtegraad",
+    "systemlocation": "Locatie goedkeuren vanaf systeeminstellingen"
+}

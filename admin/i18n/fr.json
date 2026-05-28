@@ -1,0 +1,9 @@
+{
+    "API_key": "Clé API",
+    "API_key_help": "Saisissez la touche API que vous avez reçue",
+    "forecastdays": "Jours de prévision",
+    "forecastdays_help": "Pendant combien de jours les prévisions doivent-elles être récupérées ?",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "systemlocation": "Adopter l'emplacement à partir des paramètres du système"
+}

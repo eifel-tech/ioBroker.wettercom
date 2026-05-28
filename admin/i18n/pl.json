@@ -1,0 +1,9 @@
+{
+    "API_key": "Klucz API",
+    "API_key_help": "Wprowadź otrzymany klucz API",
+    "forecastdays": "Terminy",
+    "forecastdays_help": "Na ile dni należy pobrać prognozę?",
+    "latitude": "Szerokość geograficzna",
+    "longitude": "Długość",
+    "systemlocation": "Przyjęcie lokalizacji z ustawień systemu"
+}

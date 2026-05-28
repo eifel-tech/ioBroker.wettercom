@@ -1,9 +1,0 @@
-{
-	"API_key": "Chiave API",
-	"API_key_help": "Inserisci la chiave API che hai ricevuto",
-	"systemlocation": "Adottare la posizione dalle impostazioni di sistema",
-	"latitude": "Latitudine",
-	"longitude": "Longitudine",
-	"forecastdays": "Previsioni",
-	"forecastdays_help": "Per quanti giorni devono essere recuperate le previsioni?"
-}

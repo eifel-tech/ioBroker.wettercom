@@ -1,0 +1,9 @@
+{
+    "API_key": "Chave de API",
+    "API_key_help": "Digite a chave API que você recebeu",
+    "forecastdays": "Dias de previsão",
+    "forecastdays_help": "Para quantos dias a previsão deve ser recuperada?",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "systemlocation": "Adote a localização das configurações do sistema"
+}
